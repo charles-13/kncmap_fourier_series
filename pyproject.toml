@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]        # >=77 for SPDX license support
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fourierseries"
+version = "0.1.0"
+description = "Fourier series on [-L, L]: numeric, symbolic and plotting tools."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"                                # ← SPDX string, no table
+license-files = ["LICENSE"]                    # ← explicit; ships the file
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["fourier", "series", "mathematics", "symbolic", "education"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    # "License :: OSI Approved :: MIT License",   ← REMOVED (deprecated)
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.9",
+    "sympy>=1.11",
+    "matplotlib>=3.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "build", "twine"]
+
+[project.urls]
+Homepage   = "https://github.com/yourname/fourierseries"
+Repository = "https://github.com/yourname/fourierseries"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
